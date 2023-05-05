@@ -12,14 +12,41 @@
         .brand-text{
             color: #cbb09c !important;
         }
+        .logo-description {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @media only screen and (max-width: 992px) {
+  .brand-text {
+    margin-left: 50px;
+  }
+}
+@media only screen and (max-width: 347px) {
+  .write {
+    position: absolute;
+    top: 100px;
+    left: 20%;
+  }
+}      
+.footer{
+    font-style: italic;
+}      
+    form{
+        max-width: 460px;
+        margin: 20px auto;
+        padding:20px;
+    }
     </style>
 </head>
 <body class="grey lighten-4">
 <nav class="white z-depth-0">
     <div class="container">
-        <a href="#" class="brand-logo brand-text">Blog Spot</a>
-        <ul id='nav-mobile' class='right hide-on-small-and-down'>
-            <li><a href="#" class='btn brand z-depth-0'>Write a Blog</a></li>
-        </ul>
+    <a href="index.php" class="left brand-logo brand-text">Blog Spot</a>
+         <?php if (basename($_SERVER['PHP_SELF']) !== 'add.php') : ?>
+            <ul id='nav-mobile' class='right'>
+                <li><a href="add.php" class="write btn brand z-depth-0">Write a Blog</a></li>
+            </ul>
+        <?php endif; ?>
     </div>
 </nav>
