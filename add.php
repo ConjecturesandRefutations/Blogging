@@ -1,5 +1,7 @@
 <?php
 
+include('config/db_connect.php');
+
 $title = $date = $content = '';
 $errors = array('title' =>'', 'date'=>'', 'content' => '');
 
@@ -31,8 +33,22 @@ if(empty($_POST['content'])){
 if(array_filter($errors)){
     //echo 'errors in form';
 } else {
-    //echo 'form is valid';
-    header('Location: index.php');
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    $content = mysqli_real_escape_string($conn, $_POST['content']);
+
+    //create sql
+    $sql = "INSERT INTO blogs(title,date,content) VALUES('$title','$date','$content')";
+
+     //save to db and check
+     if(mysqli_query($conn, $sql)){
+        //success
+        header('Location: index.php');
+    } else {
+        //error
+        echo 'query error: ' . mysql_error($conn);
+    }
+
 }
 
 } // end POST check
@@ -45,7 +61,7 @@ if(array_filter($errors)){
 
 <?php include('templates/header.php'); ?>
 
-<section class="container grey-text s6 xs4 xxs3">
+<section class="container grey-text xxs3 xs4 s6">
     <h4 class="center">Write a Blog</h4>
     <form action="add.php" method="POST" class="white">
         <div class="row">
