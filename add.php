@@ -27,34 +27,41 @@ if(empty($_POST['content'])){
 } else{
     $content = $_POST['content'];
 }
+
+if(array_filter($errors)){
+    //echo 'errors in form';
+} else {
+    //echo 'form is valid';
+    header('Location: index.php');
 }
 
- //end of POST check
+} // end POST check
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 
 <?php include('templates/header.php'); ?>
 
-<section class="container grey-text">
+<section class="container grey-text s6 xs4 xxs3">
     <h4 class="center">Write a Blog</h4>
     <form action="add.php" method="POST" class="white">
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12 m6">
                 <label for="">Blog Title</label>
                 <input type="text" name="title" value="<?php echo htmlspecialchars($title) ?>">
                 <div class="red-text"><?php echo $errors['title'] ?></div>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field col s12 m6">
                 <label for="">Date of Creation</label>
                 <input type="text" name="date" value="<?php echo htmlspecialchars($date) ?>">            
                 <div class="red-text"><?php echo $errors['date'] ?></div>
             </div>
         </div>
         <div class="input-field">
-            <label for="content" style="font-size: 15px;">Blog Content</label>
+            <label for="content" style="font-size: 14   px;">Blog Content</label>
             <textarea id="content" name="content" class="materialize-textarea auto-resize" rows="1"><?php echo htmlspecialchars($content) ?></textarea>
             <div class="red-text"><?php echo $errors['content'] ?></div>
         </div>

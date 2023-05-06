@@ -32,7 +32,8 @@
 .footer{
     font-style: italic;
 }     
- 
+
+
     form{
         margin: 20px auto;
         padding:20px;
