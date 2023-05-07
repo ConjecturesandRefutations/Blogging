@@ -35,10 +35,10 @@ mysqli_close($conn);
             <div class="col s6">
                 <div class="card z-depth-0">
                     <div class="card-content">
-                        <h6 class='center'><?php echo htmlspecialchars($blog['title']); ?></h6>
-                        <div class='center' style="font-weight: bold;"><?php echo htmlspecialchars($blog['date']); ?></div>
+                        <h6 class='center grey-text text-darken-3'><?php echo htmlspecialchars($blog['title']); ?></h6>
+                        <div class='center grey-text' style="font-weight: bold;"><?php echo htmlspecialchars($blog['date']); ?></div>
                         <div class="card-action">
-                        <a href="#" class="brand-text right-align">View<span class="hide-on-small-only">&nbsp;Blog</span></a>
+                        <a href="view.php?id=<?php echo $blog['id'] ?>" class="right-align">View&nbsp;<span class="hide-on-small-only">Blog</span></a>
                         </div>
                     </div>
                 </div>
