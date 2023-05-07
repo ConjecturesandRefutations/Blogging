@@ -44,7 +44,7 @@ $id = mysqli_real_escape_string($conn, $_GET['id']);
 
 <?php include('templates/header.php'); ?>
 
-<div class="container">
+<div class="container grey-text text-darken-4">
     <?php if($blog): ?>
 
     <h4 class='center'><?php echo htmlspecialchars($blog['title']); ?></h4>

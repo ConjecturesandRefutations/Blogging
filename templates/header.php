@@ -17,18 +17,25 @@
             left: 50%;
             transform: translateX(-50%);
         }
+        .quill{
+            width: 100px;
+            margin: 40px auto -30px;
+            display: block;
+            position: relative;
+            top: -30px;
+        }
         @media only screen and (max-width: 992px) {
-  .brand-text {
-    margin-left: 50px;
-  }
-}
-@media only screen and (max-width: 347px) {
-  .write {
-    position: absolute;
-    top: 100px;
-    left: 20%;
-  }
-}      
+        .brand-text {
+            margin-left: 50px;
+        }
+        }
+        @media only screen and (max-width: 347px) {
+        .write {
+            position: absolute;
+            top: 100px;
+            left: 20%;
+        }
+        }      
 .footer{
     font-style: italic;
 }     
@@ -36,7 +43,7 @@
 
     form{
         margin: 20px auto;
-        padding:20px;
+        padding: 20px;
     }
     
     </style>

@@ -34,6 +34,7 @@ mysqli_close($conn);
 
             <div class="col s6">
                 <div class="card z-depth-0">
+                    <img src="img/Quill.jpg" class="quill" alt="">
                     <div class="card-content">
                         <h6 class='center grey-text text-darken-3'><?php echo htmlspecialchars($blog['title']); ?></h6>
                         <div class='center grey-text' style="font-weight: bold;"><?php echo htmlspecialchars($blog['date']); ?></div>
